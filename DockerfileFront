@@ -1,0 +1,16 @@
+FROM python:3.10-slim as python310_base
+WORKDIR /webapp
+COPY requirements-base.txt ./
+RUN pip install --no-cache-dir -U -r  requirements-base.txt
+RUN python -m nltk.downloader punkt
+
+FROM python310_base as frontend_app
+WORKDIR /webapp
+COPY requirements-app.txt ./
+RUN pip install --no-cache-dir -U -r  requirements-app.txt
+COPY app .
+COPY dataload ./dataload
+COPY pipelines ./pipelines
+COPY train/mlruns/843117580351848379/d828c4f5bddc49beb4b34906a84603f1/artifacts /webapp/models/europcar/2023-03-19_15-47-53/
+EXPOSE 8002
+CMD ["python", "main.py"]

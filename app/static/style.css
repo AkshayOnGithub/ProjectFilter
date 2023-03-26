@@ -1,0 +1,195 @@
+
+
+body {
+    background-color: #343541;
+    color: #ffffff;
+    font-size: smaller;
+    font-family: Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.corner-tip {
+    margin-block: 0;
+    font-size: smaller;
+}
+
+#status_indicators {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#chat-history {
+    padding-bottom: 60px;
+}
+
+#chat-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+}
+
+#chat-textarea {
+    height: 100%;
+    width: 70%;
+    border: none;
+    outline: none;
+    /* background-color: #40414f; */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.chat-send-button {
+    width: 25px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.chat-message {
+    display: flex;
+    border-radius: 5px;
+    padding-left: 5px;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    align-items: baseline;
+}
+
+.irrelevant {
+    background: #444654;
+}
+
+.relevant {
+    background: #65d5a7;
+    font-weight: bold;
+}
+
+.chat-message-feedback-button {
+    width: 25px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: small;
+}
+
+.score {
+    text-align: right;
+    font-size: x-small;
+    font-style: italic;
+}
+
+
+
+.fa-keyboard {
+    font-size: 42px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+
+.overlay-form {
+  position:absolute;
+  top:50vh;
+  left:0px;
+  width:100vw;
+  height:0vh;
+  background:rgba(0,0,0,0.8);
+  z-index:-1;
+  opacity:0;
+  padding:80px 100px;
+  overflow:hidden;
+  box-sizing:border-box;
+  transition: top 500ms ease-in-out,
+              opacity 500ms ease-in-out,
+              height 0ms ease-in-out 500ms;
+}
+.overlay-form .close-btn {
+  position:absolute;
+  top:20px;
+  right:40px;
+  color:#fff;
+  font-size:40px;
+  font-weight:600;
+  cursor:pointer;
+}
+.overlay-form h1 {
+  font-size:32px;
+  color:#fff;
+}
+.overlay-form p {
+  font-size:16px;
+  color:#eee;
+  margin:-15px 0px 30px;
+}
+.overlay-form .form-element {
+  margin:20px 0px;
+}
+.overlay-form label {
+  display:block;
+  font-size:17px;
+  color:#eee;
+  margin-bottom:5px;
+}
+.overlay-form input {
+  width:100%;
+  padding:6px;
+  font-size:17px;
+  border:2px solid #eee;
+  background:transparent;
+  outline:none;
+  border-radius:10px;
+}
+.overlay-form button,
+.center button {
+  margin-top:10px;
+  width:100px;
+  height:35px;
+  font-size:15px;
+  text-transform:uppercase;
+  background:#fff;
+  color:#222;
+  border:none;
+  outline:none;
+  border-radius:10px;
+}
+.center {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.center button {
+  width:150px;
+  height:40px;
+  font-weight:600;
+  box-shadow:3px 3px 2px 1px rgba(0,0,0,0.1);
+  cursor:pointer;
+}
+
+body.activeForm .overlay-form {
+  z-index:2;
+  opacity:1;
+  top:0px;
+  height:100vh;
+  transition: top 500ms ease-in-out,
+              opacity 500ms ease-in-out,
+              height 0ms ease-in-out 0ms;
+}
